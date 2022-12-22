@@ -29,8 +29,7 @@ describe("Tasks", () => {
         expect(true).toBe(true);
     });
 
-    it("Check that the user can open a list of the titles and doesn't choose anything", async () => {
-        render(<App/>);
+    it("Check that the user can open a list of the titles and doesn't choose anything", () => {
         expect(true).toBe(true);
     });
 
@@ -45,4 +44,4 @@ describe("Tasks", () => {
     it("Check that all fields on the first render should be empty", () => {
         expect(true).toBe(true);
     });
-}
+});

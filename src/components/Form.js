@@ -150,6 +150,7 @@ const UserInfoInputs = (props) => {
                     <InputRenderer
                         field={fields[fieldKey]}
                         fieldKey={fieldKey}
+                        idx={fieldKey}
                     />
                 )
             })}
