@@ -7,10 +7,10 @@ import Form, {userInfoFields} from "./components/Form";
 const App = () => {
     return (
         <>
-            <Types/>
-            <Assertive/>
-            {/*<Main/>*/}
             <Form fields={userInfoFields}/>
+            {/*<Types/>*/}
+            {/*<Assertive/>*/}
+            {/*<Main/>*/}
         </>
     );
 };

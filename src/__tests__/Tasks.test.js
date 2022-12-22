@@ -5,7 +5,7 @@ import userEvent from "@testing-library/user-event";
 
 describe("Tasks", () => {
 
-    it("Check that option 'Ms.' was selected", () => {
+    it("Select the option and check that option 'Ms.' was selected", () => {
         expect(true).toBe(true);
     });
 
@@ -33,7 +33,7 @@ describe("Tasks", () => {
         expect(true).toBe(true);
     });
 
-    it("Check that the user doesn't gonna click a submit until at least 3 fields will be filled", () => {
+    it("Check that the user can't to click a submit until at least 3 fields will be filled", () => {
         expect(true).toBe(true);
     });
 

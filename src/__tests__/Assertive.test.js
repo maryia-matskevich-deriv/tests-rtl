@@ -15,7 +15,7 @@ describe("Assertive Functions Examples", () => {
     expect(screen.getByRole('button', {name: 'Click Me!'})).toBeDisabled();
 
     // toBeEnabled 2
-    expect(screen.getByRole('button')).not.toBeEnabled();
+    expect(screen.getByRole('button', {name: 'Click Me!'})).not.toBeEnabled();
 
     // toBeEmpty 3
     expect(screen.getByLabelText(/search/i)).toBeEmptyDOMElement(); //toBeEmpty() is deprecated
@@ -76,6 +76,7 @@ describe("Assertive Functions Examples", () => {
 
     // toBePartiallyChecked 21
     expect(screen.getByRole('checkbox', { name:'rememberMe' })).not.toBePartiallyChecked();
+    //<input type="checkbox" aria-checked="mixed" data-testid="aria-checkbox-mixed" />
 
     // toHaveDescription 22
     expect(screen.getByRole('button', { name: 'Click Me!' })).toHaveAccessibleDescription(''); //toHaveDescription() is deprecated
