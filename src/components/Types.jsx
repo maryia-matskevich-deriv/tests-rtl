@@ -7,7 +7,7 @@ const Search = ({ value, onChange, children }) => (
             placeholder="search text..."
             id="search"
             type="text"
-            value={value}
+            defaultValue={value}
             onChange={onChange}
         />
     </div>

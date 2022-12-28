@@ -141,21 +141,20 @@ const InputRenderer = (props) => {
 const UserInfoInputs = (props) => {
     const { fields = {} } = props;
 
+
+Object.keys(fields).map((fieldKey) => {
     return (
         <div
             className='UserInfoInputs'
+            idx={fieldKey}
         >
-            {Object.keys(fields).map((fieldKey, idx) => {
-                return (
-                    <InputRenderer
-                        field={fields[fieldKey]}
-                        fieldKey={fieldKey}
-                        idx={fieldKey}
-                    />
-                )
-            })}
+            <InputRenderer
+                field={fields[fieldKey]}
+                fieldKey={fieldKey}
+            />
         </div>
-    );
+    )
+    });
 }
 
 const Form = (props) => {

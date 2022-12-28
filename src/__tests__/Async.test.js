@@ -3,7 +3,7 @@ import {fireEvent, render, screen, waitFor} from "@testing-library/react";
 
 describe("Async Examples", () => {
 
-    it("waitingFor", async () => {// also we have waitForElementToBeRemoved()
+    it("waitFor", async () => {// also we have waitForElementToBeRemoved()
         const setError = jest.fn();
         const error = {
             code: '',
@@ -13,8 +13,8 @@ describe("Async Examples", () => {
         render(<FormError error={error}/>);
         const ok_btn = screen.getByText('OK');
         fireEvent.click(ok_btn);
-
-        await waitFor(() => {
+waitFor
+        await (() => {
             expect(screen.queryByText('Error is occured')).not.toBeInTheDocument();
         })
 

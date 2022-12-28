@@ -8,9 +8,9 @@ const App = () => {
     return (
         <>
             <Form fields={userInfoFields}/>
-            {/*<Types/>*/}
-            {/*<Assertive/>*/}
-            {/*<Main/>*/}
+            <Types/>
+            <Assertive/>
+            <Main/>
         </>
     );
 };

@@ -1,6 +1,7 @@
 import React from "react";
 import {fireEvent, render, screen} from "@testing-library/react";
 import App from "../App";
+import Main from "../components/Main";
 
 describe("Assertive Functions Examples", () => {
 
@@ -20,8 +21,8 @@ describe("Assertive Functions Examples", () => {
     // toBeEmpty 3
     expect(screen.getByLabelText(/search/i)).toBeEmptyDOMElement(); //toBeEmpty() is deprecated
 
-    // toBeEmptyDOMElement 4
-    expect(screen.getAllByRole('textbox')[0]).toBeEmptyDOMElement();
+    // // toBeEmptyDOMElement 4
+    // expect(screen.getAllByRole('textbox')[0]).toBeEmptyDOMElement();
 
     // toBeInTheDocument 5
     expect(await screen.findByRole('searched_object')).toBeInTheDocument();
@@ -34,9 +35,6 @@ describe("Assertive Functions Examples", () => {
 
     // toBeValid 8
     expect(screen.getByTestId('aria-invalid-false')).toBeValid();
-
-    // toBeVisible 9
-    expect(screen.getByRole('button')).toBeVisible();
 
     // toContainElement 10
     expect(screen.getAllByRole('textbox')[1]).not.toContainElement(null); //shouldn't have null and undefined
@@ -81,4 +79,11 @@ describe("Assertive Functions Examples", () => {
     // toHaveDescription 22
     expect(screen.getByRole('button', { name: 'Click Me!' })).toHaveAccessibleDescription(''); //toHaveDescription() is deprecated
   });
+
+  it("renders visible button", async () => {
+    // toBeVisible 9
+    render(<Main/>);
+    expect(screen.getByRole('button')).toBeVisible();
+  });
+
 });
