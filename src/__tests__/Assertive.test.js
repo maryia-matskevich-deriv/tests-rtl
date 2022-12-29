@@ -1,5 +1,5 @@
 import React from "react";
-import {fireEvent, render, screen, act} from "@testing-library/react";
+import {fireEvent, render, screen, act, waitFor} from "@testing-library/react";
 import App from "../App";
 import Main from "../components/Main";
 import Assertive from "../components/Assertive";
@@ -21,9 +21,6 @@ describe("Assertive Functions Examples", () => {
 
     // toBeEmpty 3
     expect(screen.getByLabelText(/search/i)).toBeEmptyDOMElement(); //toBeEmpty() is deprecated
-
-    // toBeEmptyDOMElement 4
-    // expect(screen.getAllByRole('textbox')[0]).toBeEmptyDOMElement();
 
     // toBeInTheDocument 5
     expect(await screen.findByRole('searched_object')).toBeInTheDocument();
@@ -91,9 +88,10 @@ describe("Assertive Functions Examples", () => {
   it("renders input in the DOMElement",  () => {
     // toBeEmptyDOMElement 4
     render(<Assertive/>);
-    // act(() => {
-    // });
-    expect(screen.getByRole('textbox')).toBeEmptyDOMElement();
+    waitFor(() => {
+      expect(screen.getByRole('form')).toBeEmptyDOMElement();
+    });
+
   });
 
 });

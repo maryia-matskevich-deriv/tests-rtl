@@ -4,7 +4,7 @@ import FormError from "../components/FormError";
 
 describe("Async Examples", () => {
 
-    it("waitFor", async () => {// also we have waitForElementToBeRemoved()
+    it("waitFor", async () => {
         const setError = jest.fn();
         const error = {
             code: '',
