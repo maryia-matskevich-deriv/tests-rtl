@@ -6,7 +6,7 @@ const Main = () => {
     return (
         <div>
             <span>{count}</span>
-            <button onClick={() => { add(3); }}>++</button>
+            <button onClick={() => { add(3); }}>+3</button>
         </div>
     );
 };

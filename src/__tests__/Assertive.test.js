@@ -1,7 +1,8 @@
 import React from "react";
-import {fireEvent, render, screen} from "@testing-library/react";
+import {fireEvent, render, screen, act} from "@testing-library/react";
 import App from "../App";
 import Main from "../components/Main";
+import Assertive from "../components/Assertive";
 
 describe("Assertive Functions Examples", () => {
 
@@ -21,7 +22,7 @@ describe("Assertive Functions Examples", () => {
     // toBeEmpty 3
     expect(screen.getByLabelText(/search/i)).toBeEmptyDOMElement(); //toBeEmpty() is deprecated
 
-    // // toBeEmptyDOMElement 4
+    // toBeEmptyDOMElement 4
     // expect(screen.getAllByRole('textbox')[0]).toBeEmptyDOMElement();
 
     // toBeInTheDocument 5
@@ -75,15 +76,24 @@ describe("Assertive Functions Examples", () => {
     // toBePartiallyChecked 21
     expect(screen.getByRole('checkbox', { name:'rememberMe' })).not.toBePartiallyChecked();
     //<input type="checkbox" aria-checked="mixed" data-testid="aria-checkbox-mixed" />
+    //https://w3c.github.io/aria-practices/examples/checkbox/checkbox-mixed.html
 
     // toHaveDescription 22
     expect(screen.getByRole('button', { name: 'Click Me!' })).toHaveAccessibleDescription(''); //toHaveDescription() is deprecated
   });
 
-  it("renders visible button", async () => {
+  it("renders visible button",  () => {
     // toBeVisible 9
     render(<Main/>);
     expect(screen.getByRole('button')).toBeVisible();
+  });
+
+  it("renders input in the DOMElement",  () => {
+    // toBeEmptyDOMElement 4
+    render(<Assertive/>);
+    // act(() => {
+    // });
+    expect(screen.getByRole('textbox')).toBeEmptyDOMElement();
   });
 
 });
