@@ -76,6 +76,7 @@ describe("Assertive Functions Examples", () => {
     // toBePartiallyChecked 21
     expect(screen.getByRole('checkbox', { name:'rememberMe' })).not.toBePartiallyChecked();
     //<input type="checkbox" aria-checked="mixed" data-testid="aria-checkbox-mixed" />
+    //https://w3c.github.io/aria-practices/examples/checkbox/checkbox-mixed.html
 
     // toHaveDescription 22
     expect(screen.getByRole('button', { name: 'Click Me!' })).toHaveAccessibleDescription(''); //toHaveDescription() is deprecated
