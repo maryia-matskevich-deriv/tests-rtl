@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-const getUser = () => Promise.resolve({ id: 1, name: "WEB-Developer" });
+const getUser = () => Promise.resolve({ id: 1, name: "front-end developer" });
 
 const Search = ({ value, onChange, children }) => (
     <div>
@@ -37,7 +37,7 @@ const Assertive = () => {
 
     return (
         <div>
-            {user && <h2>Logged in as {user.name}</h2>}
+            {user && <h5>Logged in as {user.name}</h5>}
             <img className="image333" src="" alt="search image 333" />
             <Search defaultValue={search} onChange={handleChange}>
                 SEARCH:
